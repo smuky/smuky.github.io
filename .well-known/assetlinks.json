@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.muky.toto_ai",
+    "sha256_cert_fingerprints": ["DD:95:EC:72:F2:4A:8F:BE:98:A7:5D:18:73:4D:DC:21:0F:81:BC:03:81:10:08:5A:A2:DB:52:4E:5E:65:D4:41"]
+  }
+}]
