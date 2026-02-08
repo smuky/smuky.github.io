@@ -3,6 +3,9 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.muky.toto_ai",
-    "sha256_cert_fingerprints": ["DD:95:EC:72:F2:4A:8F:BE:98:A7:5D:18:73:4D:DC:21:0F:81:BC:03:81:10:08:5A:A2:DB:52:4E:5E:65:D4:41"]
+    "sha256_cert_fingerprints": ["DD:95:EC:72:F2:4A:8F:BE:98:A7:5D:18:73:4D:DC:21:0F:81:BC:03:81:10:08:5A:A2:DB:52:4E:5E:65:D4:41",
+      "B4:13:60:48:5E:A2:34:56:72:36:1B:37:6C:85:AF:B8:BB:E6:3F:7C:11:54:B1:66:95:0E:D9:30:5A:B9:4E:3E",
+      "09:9C:D5:87:BC:17:0E:9B:33:75:C2:13:1C:99:F3:D4:4E:D0:F2:D3:18:89:61:F3:A4:53:83:16:63:6F:E8:59"]
+
   }
 }]
