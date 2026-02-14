@@ -5,23 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Terms of Use & Privacy Policy | 1X2-AI</title>
+
   <style>
     :root{
+      /* Core */
       --bg0:#070A10;
-      --bg1:#0B1220;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
+      --bg1:#0B1220;   /* page base */
+      --panel:#0F172A; /* SOLID card background (fixes overlap look) */
+      --panel2:#111C33;/* SOLID head background */
       --text:#EAF0FF;
       --muted: rgba(234,240,255,.72);
       --muted2: rgba(234,240,255,.58);
       --line: rgba(255,255,255,.12);
+
+      /* Accents */
       --accent:#7C5CFF;
       --accent2:#39D0FF;
       --danger:#FF4D5E;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+
+      /* Layout */
+      --shadow: 0 16px 45px rgba(0,0,0,.35);
       --radius: 18px;
       --radius2: 24px;
       --max: 980px;
+
+      /* Fonts */
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
     }
@@ -30,13 +38,13 @@
       :root{
         --bg0:#F6F7FB;
         --bg1:#FFFFFF;
-        --card: rgba(15,23,42,.04);
-        --card2: rgba(15,23,42,.06);
+        --panel:#FFFFFF;
+        --panel2:#F3F6FF;
         --text:#0B1220;
         --muted: rgba(11,18,32,.72);
         --muted2: rgba(11,18,32,.58);
         --line: rgba(11,18,32,.12);
-        --shadow: 0 20px 60px rgba(2,6,23,.12);
+        --shadow: 0 18px 50px rgba(2,6,23,.10);
       }
     }
 
@@ -47,9 +55,9 @@
       font-family: var(--sans);
       color: var(--text);
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(57,208,255,.25), transparent 60%),
-        radial-gradient(800px 600px at 50% 120%, rgba(255,77,94,.18), transparent 55%),
+        radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.30), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(57,208,255,.22), transparent 60%),
+        radial-gradient(800px 600px at 50% 120%, rgba(255,77,94,.14), transparent 55%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       line-height: 1.65;
     }
@@ -58,18 +66,19 @@
     a:hover{ text-decoration: underline; text-underline-offset: 4px; }
 
     .wrap{max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px;}
+
+    /* Sticky Top Bar */
     .topbar{
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.0));
+      background: rgba(0,0,0,.22);
       border-bottom: 1px solid var(--line);
     }
     @media (prefers-color-scheme: light){
-      .topbar{ background: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.40)); }
+      .topbar{ background: rgba(255,255,255,.70); }
     }
-
     .topbar-inner{
       max-width: var(--max);
       margin: 0 auto;
@@ -81,20 +90,20 @@
     }
 
     .brand{
-      display:flex; align-items:center; gap: 12px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
       min-width: 240px;
     }
-
     .logo{
       width: 44px;
       height: 44px;
       border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
       border: 1px solid var(--line);
       background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,.18);
     }
-
     .brand h1{
       font-size: 14px;
       margin:0;
@@ -108,7 +117,9 @@
     }
 
     .navlinks{
-      display:flex; align-items:center; gap: 10px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
       flex-wrap: wrap;
       justify-content:flex-end;
     }
@@ -119,26 +130,25 @@
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      background: rgba(255,255,255,.06);
       color: var(--muted);
       font-size: 12px;
-      transition: transform .12s ease, background .12s ease;
+      transition: transform .12s ease, background .12s ease, color .12s ease;
       user-select:none;
     }
     .pill:hover{
-      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      background: rgba(255,255,255,.10);
       transform: translateY(-1px);
       text-decoration:none;
       color: var(--text);
     }
 
-    header.hero{
-      padding: 28px 0 18px;
-    }
+    /* Hero */
+    header.hero{padding: 28px 0 18px;}
     .hero-card{
       border-radius: var(--radius2);
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      background: var(--panel); /* SOLID */
       box-shadow: var(--shadow);
       overflow:hidden;
     }
@@ -174,14 +184,16 @@
       font-family: var(--mono);
     }
     .badge{
-      display:inline-flex; align-items:center; gap: 8px;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
       padding: 7px 10px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(124,92,255,.12);
+      background: rgba(124,92,255,.14);
       color: var(--text);
       font-family: var(--sans);
-      font-weight: 600;
+      font-weight: 650;
       letter-spacing: .01em;
     }
 
@@ -194,21 +206,21 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 12px 12px;
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.04);
       color: var(--muted);
       font-size: 13px;
     }
     .mini strong{color: var(--text)}
     .mini .dot{display:inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 8px; background: var(--accent2);}
     .mini.warn .dot{background: var(--danger);}
-    .mini a{color: var(--text); text-decoration: underline; text-underline-offset: 3px;}
 
+    /* TOC */
     .toc{
-      margin-top: 16px;
+      margin: 0 18px 18px;
       padding: 14px 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.03);
     }
     .toc h2{
       margin:0 0 10px;
@@ -225,37 +237,36 @@
       .toc-grid{grid-template-columns:1fr}
     }
     .toc a{
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       padding: 10px 12px;
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      background: rgba(255,255,255,.04);
       color: var(--muted);
       text-decoration:none;
-      transition: transform .12s ease, background .12s ease;
+      transition: transform .12s ease, background .12s ease, color .12s ease;
       font-size: 13px;
     }
     .toc a:hover{
       transform: translateY(-1px);
-      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05));
+      background: rgba(255,255,255,.08);
       color: var(--text);
     }
-    .toc code{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted2);
-    }
+    .toc code{font-family: var(--mono); font-size: 12px; color: var(--muted2);}
 
     main{margin-top: 18px}
+
+    /* Cards (SOLID backgrounds to avoid overlap color seams) */
     section.card{
       margin: 14px 0;
       border: 1px solid var(--line);
       border-radius: var(--radius2);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 35px rgba(0,0,0,.18);
+      background: var(--panel); /* SOLID */
+      box-shadow: 0 10px 30px rgba(0,0,0,.14);
       overflow:hidden;
     }
-
     .card-head{
       padding: 16px 18px;
       display:flex;
@@ -263,7 +274,7 @@
       justify-content:space-between;
       gap: 12px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      background: var(--panel2); /* SOLID */
     }
     .card-head h2{
       margin:0;
@@ -275,7 +286,7 @@
       font-size: 12px;
       color: var(--muted2);
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.03);
       padding: 6px 10px;
       border-radius: 999px;
       white-space:nowrap;
@@ -315,7 +326,6 @@
       align-items:center;
       justify-content:space-between;
     }
-
     .backtop{
       display:inline-flex;
       align-items:center;
@@ -323,21 +333,18 @@
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.04);
       color: var(--muted);
       text-decoration:none;
     }
     .backtop:hover{color: var(--text); text-decoration:none}
 
-    /* nicer anchor offset for sticky bar */
-    .anchor{
-      scroll-margin-top: 90px;
-    }
+    /* anchor offset for sticky bar */
+    .anchor{ scroll-margin-top: 90px; }
   </style>
 </head>
 
 <body>
-  <!-- Sticky Top Bar -->
   <div class="topbar" id="top">
     <div class="topbar-inner">
       <div class="brand">
@@ -358,14 +365,13 @@
   </div>
 
   <div class="wrap">
-    <!-- Hero -->
     <header class="hero">
       <div class="hero-card">
         <div class="hero-inner">
           <div>
             <h2 class="title">Terms of Use & Privacy Policy</h2>
             <p class="subtitle">
-              A clear, professional policy for an AI-powered football insights app — built for entertainment, not gambling.
+              This document describes the Terms of Use and Privacy Policy for the 1X2-AI – Football & Fun App.
             </p>
 
             <div class="meta">
@@ -385,12 +391,11 @@
             </div>
             <div class="mini">
               <span class="dot"></span>
-              <strong>Personal use only.</strong> Commercial copying/extraction may lead to legal action.
+              <strong>Personal use only.</strong> Commercial copying/extraction may be enforced by law.
             </div>
           </div>
         </div>
 
-        <!-- Table of contents -->
         <div class="toc" aria-label="Table of contents">
           <h2>Contents</h2>
           <div class="toc-grid">
@@ -411,7 +416,6 @@
     </header>
 
     <main>
-      <!-- TERMS -->
       <section class="card anchor" id="terms">
         <div class="card-head">
           <h2>1. Terms of Use</h2>
@@ -422,13 +426,10 @@
             Welcome to <strong>1X2-AI – Football & Fun</strong> (the “App”). By downloading, accessing, or using the App,
             you agree to these Terms of Use and the Privacy Policy below (together, the “Terms”).
           </p>
-          <p>
-            If you do not agree to these Terms, please discontinue use of the App immediately.
-          </p>
+          <p>If you do not agree to these Terms, please discontinue use of the App immediately.</p>
         </div>
       </section>
 
-      <!-- SERVICE / NO GAMBLING -->
       <section class="card anchor" id="service">
         <div class="card-head">
           <h2>2. Nature of the Service (No Gambling)</h2>
@@ -455,7 +456,6 @@
         </div>
       </section>
 
-      <!-- AI -->
       <section class="card anchor" id="ai">
         <div class="card-head">
           <h2>3. Artificial Intelligence Disclaimer</h2>
@@ -474,7 +474,6 @@
         </div>
       </section>
 
-      <!-- BILLING -->
       <section class="card anchor" id="billing">
         <div class="card-head">
           <h2>4. Subscriptions & Digital Credits</h2>
@@ -491,13 +490,9 @@
             <li>Refunds (if any) are handled under the applicable store’s refund policy.</li>
             <li>Features may be subject to reasonable usage limits to protect service stability.</li>
           </ul>
-          <p class="fineprint">
-            Tip: For the most store-compliant wording, keep your refund language aligned with Google/Apple policies and avoid promising refunds directly.
-          </p>
         </div>
       </section>
 
-      <!-- IP -->
       <section class="card anchor" id="ip">
         <div class="card-head">
           <h2>5. Intellectual Property & Personal Use</h2>
@@ -518,14 +513,12 @@
           <div class="notice" style="border-left-color: var(--accent2); background: rgba(57,208,255,.10);">
             <p style="margin:0">
               <strong>Commercial misuse:</strong> Unauthorized commercial use, redistribution, or data extraction may result
-              in suspension/termination and may expose you (or your organization) to legal action, including claims for damages
-              and injunctive relief.
+              in suspension/termination and enforcement actions (including injunctive relief and damages), where permitted by law.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ACCEPTABLE USE -->
       <section class="card anchor" id="acceptable">
         <div class="card-head">
           <h2>6. Acceptable Use</h2>
@@ -539,22 +532,17 @@
             <li>Circumventing subscriptions, credits, or paywalls.</li>
             <li>Using the App for unlawful purposes.</li>
           </ul>
-          <p>
-            We may suspend or terminate access if we reasonably believe you violated these Terms or harmed the service.
-          </p>
+          <p>We may suspend or terminate access if we reasonably believe you violated these Terms or harmed the service.</p>
         </div>
       </section>
 
-      <!-- PRIVACY -->
       <section class="card anchor" id="privacy">
         <div class="card-head">
           <h2>7. Privacy Policy</h2>
           <span class="chip">Privacy</span>
         </div>
         <div class="card-body">
-          <p>
-            We respect your privacy. We do not sell, rent, or trade personal data.
-          </p>
+          <p><strong>We do not sell, rent, or trade personal data.</strong></p>
 
           <p><strong>What we may collect</strong></p>
           <ul>
@@ -564,10 +552,11 @@
           </ul>
 
           <p><strong>Third-party services</strong></p>
-          <p>
-            The App may use third-party providers (such as Firebase, AdMob, and RevenueCat). These services may collect
-            limited information under their own privacy policies.
-          </p>
+          <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy & Security</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob & Data</a></li>
+          </ul>
 
           <p><strong>How we use data</strong></p>
           <ul>
@@ -576,15 +565,9 @@
             <li>To manage subscriptions and purchases.</li>
             <li>To display ads (if enabled in your version/region).</li>
           </ul>
-
-          <p class="fineprint">
-            If you want, I can add a short “Data Retention” paragraph (e.g., “we keep analytics for up to X months”) —
-            it can help with professional completeness.
-          </p>
         </div>
       </section>
 
-      <!-- LIABILITY -->
       <section class="card anchor" id="liability">
         <div class="card-head">
           <h2>8. Limitation of Liability</h2>
@@ -599,26 +582,20 @@
             <li>Decisions made based on App content, including AI outputs.</li>
             <li>Indirect, incidental, or consequential damages.</li>
           </ul>
-          <p>
-            You use the App at your own risk.
-          </p>
+          <p>You use the App at your own risk.</p>
         </div>
       </section>
 
-      <!-- AGE -->
       <section class="card anchor" id="age">
         <div class="card-head">
           <h2>9. Age Requirement</h2>
           <span class="chip">Eligibility</span>
         </div>
         <div class="card-body">
-          <p>
-            The App is intended for users aged <strong>13+</strong>. Users under 18 should use the App with parental guidance.
-          </p>
+          <p>The App is intended for users aged <strong>13+</strong>. Users under 18 should use the App with parental guidance.</p>
         </div>
       </section>
 
-      <!-- CHANGES -->
       <section class="card anchor" id="changes">
         <div class="card-head">
           <h2>10. Changes to These Terms</h2>
@@ -632,16 +609,13 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section class="card anchor" id="contact">
         <div class="card-head">
           <h2>11. Contact</h2>
           <span class="chip">Support</span>
         </div>
         <div class="card-body">
-          <p>
-            For questions about these Terms or the Privacy Policy, contact us:
-          </p>
+          <p>For questions about these Terms or the Privacy Policy, contact us:</p>
           <ul>
             <li>Email: <a href="mailto:aifootballpredictor@gmail.com">aifootballpredictor@gmail.com</a></li>
           </ul>
@@ -656,7 +630,6 @@
   </div>
 
   <script>
-    // Keep footer year current
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
