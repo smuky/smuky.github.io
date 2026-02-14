@@ -1,101 +1,663 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Terms & Privacy - AI Football Predictor & Fun</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; line-height: 1.6; color: #333; }
-        h1, h2 { color: #2c3e50; }
-        h3 { color: #e67e22; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .lang-nav { text-align: center; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 30px; }
-        .section-divider { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); margin: 50px 0; }
-        .disclaimer-box { background-color: #ffebee; border: 1px solid #ef9a9a; padding: 15px; border-radius: 5px; color: #c62828; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Terms of Use & Privacy Policy | 1X2-AI</title>
+  <style>
+    :root{
+      --bg0:#070A10;
+      --bg1:#0B1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --muted2: rgba(234,240,255,.58);
+      --line: rgba(255,255,255,.12);
+      --accent:#7C5CFF;
+      --accent2:#39D0FF;
+      --danger:#FF4D5E;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg0:#F6F7FB;
+        --bg1:#FFFFFF;
+        --card: rgba(15,23,42,.04);
+        --card2: rgba(15,23,42,.06);
+        --text:#0B1220;
+        --muted: rgba(11,18,32,.72);
+        --muted2: rgba(11,18,32,.58);
+        --line: rgba(11,18,32,.12);
+        --shadow: 0 20px 60px rgba(2,6,23,.12);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(57,208,255,.25), transparent 60%),
+        radial-gradient(800px 600px at 50% 120%, rgba(255,77,94,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      line-height: 1.65;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+
+    .wrap{max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px;}
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.0));
+      border-bottom: 1px solid var(--line);
+    }
+    @media (prefers-color-scheme: light){
+      .topbar{ background: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.40)); }
+    }
+
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 240px;
+    }
+
+    .logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+    }
+
+    .brand h1{
+      font-size: 14px;
+      margin:0;
+      letter-spacing:.02em;
+      font-weight: 720;
+    }
+    .brand p{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .navlinks{
+      display:flex; align-items:center; gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      color: var(--muted);
+      font-size: 12px;
+      transition: transform .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .pill:hover{
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      transform: translateY(-1px);
+      text-decoration:none;
+      color: var(--text);
+    }
+
+    header.hero{
+      padding: 28px 0 18px;
+    }
+    .hero-card{
+      border-radius: var(--radius2);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      padding: 26px 22px;
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 16px;
+      align-items:center;
+    }
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns:1fr}
+    }
+
+    .title{
+      margin: 0 0 6px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .subtitle{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      color: var(--muted2);
+      font-size: 12px;
+      font-family: var(--mono);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(124,92,255,.12);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+
+    .callouts{
+      display:grid;
+      gap: 10px;
+      align-content:start;
+    }
+    .mini{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .mini strong{color: var(--text)}
+    .mini .dot{display:inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 8px; background: var(--accent2);}
+    .mini.warn .dot{background: var(--danger);}
+    .mini a{color: var(--text); text-decoration: underline; text-underline-offset: 3px;}
+
+    .toc{
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+    }
+    .toc h2{
+      margin:0 0 10px;
+      font-size: 14px;
+      letter-spacing: .02em;
+      color: var(--text);
+    }
+    .toc-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 12px;
+    }
+    @media (max-width: 720px){
+      .toc-grid{grid-template-columns:1fr}
+    }
+    .toc a{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      color: var(--muted);
+      text-decoration:none;
+      transition: transform .12s ease, background .12s ease;
+      font-size: 13px;
+    }
+    .toc a:hover{
+      transform: translateY(-1px);
+      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05));
+      color: var(--text);
+    }
+    .toc code{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    main{margin-top: 18px}
+    section.card{
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 35px rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+
+    .card-head{
+      padding: 16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    }
+    .card-head h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: .01em;
+    }
+    .chip{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted2);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .card-body{padding: 16px 18px 20px}
+    .card-body p{margin: 0 0 10px; color: var(--muted)}
+    .card-body p strong{color: var(--text)}
+    ul{margin: 10px 0 0 18px; padding: 0}
+    li{margin: 7px 0; color: var(--muted)}
+    li strong{color: var(--text)}
+
+    .notice{
+      border-left: 3px solid var(--danger);
+      background: rgba(255,77,94,.10);
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+    .notice strong{color: var(--text)}
+    .fineprint{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 12px;
+    }
+
+    footer{
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .backtop{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      text-decoration:none;
+    }
+    .backtop:hover{color: var(--text); text-decoration:none}
+
+    /* nicer anchor offset for sticky bar */
+    .anchor{
+      scroll-margin-top: 90px;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Sticky Top Bar -->
+  <div class="topbar" id="top">
+    <div class="topbar-inner">
+      <div class="brand">
+        <!-- Put logo.png in the same folder as this HTML file -->
+        <img class="logo" src="logo.png" alt="1X2-AI Logo" />
+        <div>
+          <h1>1X2-AI – Football & Fun</h1>
+          <p>Terms of Use & Privacy Policy</p>
+        </div>
+      </div>
 
-    <div class="lang-nav">
-        <strong>Navigate / ניווט:</strong> 
-        <a href="#english">English Version</a> | 
-        <a href="#hebrew">גרסה בעברית</a>
+      <nav class="navlinks" aria-label="Quick navigation">
+        <a class="pill" href="#terms">Terms</a>
+        <a class="pill" href="#privacy">Privacy</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
     </div>
+  </div>
 
-    <a name="english"></a>
-    <h1>Terms of Use & Privacy Policy</h1>
-    <p><strong>Last updated:</strong> December 17, 2025</p>
-    
-    <p>By downloading or using the app, these terms will automatically apply to you.</p>
+  <div class="wrap">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <div>
+            <h2 class="title">Terms of Use & Privacy Policy</h2>
+            <p class="subtitle">
+              A clear, professional policy for an AI-powered football insights app — built for entertainment, not gambling.
+            </p>
 
-    <h3>1. Nature of Service (No Gambling)</h3>
-    <div class="disclaimer-box">
-        <p><strong>IMPORTANT DISCLAIMER:</strong></p>
-        <ul>
-            <li>This app is for <strong>informational and entertainment purposes only</strong>.</li>
-            <li>This is <strong>NOT a gambling application</strong>. We do not accept bets, huge wagers, or pay out winnings.</li>
-            <li>We are not affiliated with any official betting board (such as "Toto/Winner").</li>
-        </ul>
-    </div>
+            <div class="meta">
+              <span class="badge">Last Updated: February 14, 2026</span>
+              <span>Document version: <span style="font-family:var(--mono)">v2</span></span>
+            </div>
+          </div>
 
-    <h3>2. Subscriptions & Payments</h3>
-    <p>Some features are available via paid subscription:</p>
-    <ul>
-        <li>Payment will be charged to your Google Play Account at confirmation of purchase.</li>
-        <li>Subscription automatically renews unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
-        <li>You can manage and cancel your subscriptions by going to your Google Play Account Settings.</li>
-        <li>No refunds are provided for unused portions of the term.</li>
-    </ul>
-
-    <h3>3. Limitation of Liability</h3>
-    <p>Sports are unpredictable. The AI predictions are based on statistics and do not guarantee results. <strong>You are solely responsible for any financial decisions or bets you place outside of this app.</strong> The developer is not liable for any financial losses.</p>
-
-    <h3>4. Privacy & Data</h3>
-    <p>We respect your privacy:</p>
-    <ul>
-        <li>We do not collect personal contact information (email/phone) without consent.</li>
-        <li>The app uses third-party services that may collect information used to identify your device for analytics and ads:
-            <ul>
-                <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-                <li><a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a></li>
-                <li>RevenueCat (for subscription management)</li>
-            </ul>
-        </li>
-    </ul>
-
-    <hr class="section-divider">
-
-    <a name="hebrew"></a>
-    <div dir="rtl">
-        <h1>תנאי שימוש ומדיניות פרטיות</h1>
-        <p><strong>עודכן בתאריך:</strong> 17 בדצמבר 2025</p>
-
-        <h3>1. מהות השירות (הבהרה משפטית)</h3>
-        <div class="disclaimer-box">
-            <p><strong>חשוב להבהיר:</strong></p>
-            <ul>
-                <li>האפליקציה נועדה למטרות <strong>בידור, סטטיסטיקה ומידע בלבד</strong>.</li>
-                <li><strong>זו אינה אפליקציית הימורים.</strong> לא ניתן להפקיד כסף או להמר בתוך האפליקציה.</li>
-                <li>האפליקציה אינה קשורה למועצה להסדר ההימורים בספורט ("הטוטו/Winner").</li>
-            </ul>
+          <div class="callouts">
+            <div class="mini warn">
+              <span class="dot"></span>
+              <strong>Entertainment only.</strong> No bets, no wagers, no payouts.
+            </div>
+            <div class="mini">
+              <span class="dot"></span>
+              <strong>AI disclaimer.</strong> Outputs can be inaccurate; no guarantees.
+            </div>
+            <div class="mini">
+              <span class="dot"></span>
+              <strong>Personal use only.</strong> Commercial copying/extraction may lead to legal action.
+            </div>
+          </div>
         </div>
 
-        <h3>2. מנויים ותשלומים</h3>
-        <p>חלק מהשירותים ניתנים למנויים בלבד:</p>
-        <ul>
-            <li>התשלום מתבצע באמצעות חשבון ה-Google Play שלך.</li>
-            <li>המנוי מתחדש באופן אוטומטי (חודשי/שנתי).</li>
-            <li>ניתן לבטל את החידוש האוטומטי בכל עת דרך הגדרות החשבון ב-Google Play.</li>
-            <li>לא יינתן החזר כספי יחסי על תקופה שלא נוצלה.</li>
-        </ul>
+        <!-- Table of contents -->
+        <div class="toc" aria-label="Table of contents">
+          <h2>Contents</h2>
+          <div class="toc-grid">
+            <a href="#terms"><span>1. Terms of Use</span><code>#terms</code></a>
+            <a href="#service"><span>2. Nature of Service (No Gambling)</span><code>#service</code></a>
+            <a href="#ai"><span>3. AI Disclaimer</span><code>#ai</code></a>
+            <a href="#billing"><span>4. Subscriptions & Credits</span><code>#billing</code></a>
+            <a href="#ip"><span>5. Intellectual Property</span><code>#ip</code></a>
+            <a href="#acceptable"><span>6. Acceptable Use</span><code>#acceptable</code></a>
+            <a href="#privacy"><span>7. Privacy Policy</span><code>#privacy</code></a>
+            <a href="#liability"><span>8. Limitation of Liability</span><code>#liability</code></a>
+            <a href="#age"><span>9. Age Requirement</span><code>#age</code></a>
+            <a href="#changes"><span>10. Changes</span><code>#changes</code></a>
+            <a href="#contact"><span>11. Contact</span><code>#contact</code></a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-        <h3>3. הסרת אחריות</h3>
-        <p>תחזיות הספורט מבוססות על בינה מלאכותית וסטטיסטיקה, אך ספורט הוא בלתי צפוי. <strong>אין להסתמך על המידע כהבטחה לזכייה.</strong> המפתח לא ישא באחריות לכל נזק כספי או הפסד שייגרם למשתמש. כל הימור שתבצע מחוץ לאפליקציה הוא על אחריותך הבלעדית.</p>
+    <main>
+      <!-- TERMS -->
+      <section class="card anchor" id="terms">
+        <div class="card-head">
+          <h2>1. Terms of Use</h2>
+          <span class="chip">Agreement</span>
+        </div>
+        <div class="card-body">
+          <p>
+            Welcome to <strong>1X2-AI – Football & Fun</strong> (the “App”). By downloading, accessing, or using the App,
+            you agree to these Terms of Use and the Privacy Policy below (together, the “Terms”).
+          </p>
+          <p>
+            If you do not agree to these Terms, please discontinue use of the App immediately.
+          </p>
+        </div>
+      </section>
 
-        <h3>4. צור קשר</h3>
-        <p>לשאלות נוספות ניתן לפנות למייל: <a href="mailto:aifootballpredictor@gmail.com">aifootballpredictor@gmail.com</a></p>
-    </div>
+      <!-- SERVICE / NO GAMBLING -->
+      <section class="card anchor" id="service">
+        <div class="card-head">
+          <h2>2. Nature of the Service (No Gambling)</h2>
+          <span class="chip">Entertainment Only</span>
+        </div>
+        <div class="card-body">
+          <p>
+            The App provides AI-powered statistical analysis and interactive insights related to football matches.
+            The App is provided strictly for <strong>entertainment and informational purposes only</strong>.
+          </p>
 
+          <div class="notice">
+            <p style="margin:0">
+              <strong>Important:</strong> This App is <strong>not</strong> a gambling product. It does not accept bets,
+              does not process wagers, and does not provide payouts.
+            </p>
+          </div>
+
+          <ul>
+            <li>The App is <strong>not</strong> affiliated with betting operators, lottery authorities, or wagering services.</li>
+            <li>Any decisions you make outside the App are your responsibility.</li>
+            <li>Nothing in the App is financial, investment, or gambling advice.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- AI -->
+      <section class="card anchor" id="ai">
+        <div class="card-head">
+          <h2>3. Artificial Intelligence Disclaimer</h2>
+          <span class="chip">No Guarantees</span>
+        </div>
+        <div class="card-body">
+          <p>
+            The App integrates artificial intelligence models to generate analytical insights and summaries.
+            AI-generated outputs are algorithmic and may be incomplete or inaccurate.
+          </p>
+          <ul>
+            <li>AI outputs do <strong>not</strong> guarantee match outcomes.</li>
+            <li>AI outputs should <strong>not</strong> be relied upon for financial or betting decisions.</li>
+            <li>The developer makes <strong>no warranties</strong> regarding accuracy, reliability, or completeness.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- BILLING -->
+      <section class="card anchor" id="billing">
+        <div class="card-head">
+          <h2>4. Subscriptions & Digital Credits</h2>
+          <span class="chip">Billing</span>
+        </div>
+        <div class="card-body">
+          <p>
+            Certain features may require a paid subscription and/or the purchase of digital credits.
+            These purchases help fund server infrastructure and AI processing costs.
+          </p>
+          <ul>
+            <li>Credits/subscriptions are <strong>digital products</strong> with no cash value and are <strong>non-transferable</strong>.</li>
+            <li>Payments are processed via official app store billing (e.g., Google Play / Apple App Store).</li>
+            <li>Refunds (if any) are handled under the applicable store’s refund policy.</li>
+            <li>Features may be subject to reasonable usage limits to protect service stability.</li>
+          </ul>
+          <p class="fineprint">
+            Tip: For the most store-compliant wording, keep your refund language aligned with Google/Apple policies and avoid promising refunds directly.
+          </p>
+        </div>
+      </section>
+
+      <!-- IP -->
+      <section class="card anchor" id="ip">
+        <div class="card-head">
+          <h2>5. Intellectual Property & Personal Use</h2>
+          <span class="chip">IP</span>
+        </div>
+        <div class="card-body">
+          <p>
+            All content in the App (including AI outputs, formatting, software, design, and branding) is protected by
+            intellectual property rights and is licensed to you for <strong>personal, non-commercial use only</strong>.
+          </p>
+          <ul>
+            <li>You may not copy, reproduce, scrape, extract, or aggregate data from the App.</li>
+            <li>You may not republish AI outputs or app content for commercial services or resale.</li>
+            <li>You may not reverse engineer, decompile, or attempt to replicate the system.</li>
+            <li>You may not use bots, scripts, automation, or bulk export methods to harvest content.</li>
+          </ul>
+
+          <div class="notice" style="border-left-color: var(--accent2); background: rgba(57,208,255,.10);">
+            <p style="margin:0">
+              <strong>Commercial misuse:</strong> Unauthorized commercial use, redistribution, or data extraction may result
+              in suspension/termination and may expose you (or your organization) to legal action, including claims for damages
+              and injunctive relief.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCEPTABLE USE -->
+      <section class="card anchor" id="acceptable">
+        <div class="card-head">
+          <h2>6. Acceptable Use</h2>
+          <span class="chip">Conduct</span>
+        </div>
+        <div class="card-body">
+          <p>You agree not to misuse the App, including by:</p>
+          <ul>
+            <li>Interfering with or disrupting the App’s operation or security.</li>
+            <li>Attempting unauthorized access to systems or user accounts.</li>
+            <li>Circumventing subscriptions, credits, or paywalls.</li>
+            <li>Using the App for unlawful purposes.</li>
+          </ul>
+          <p>
+            We may suspend or terminate access if we reasonably believe you violated these Terms or harmed the service.
+          </p>
+        </div>
+      </section>
+
+      <!-- PRIVACY -->
+      <section class="card anchor" id="privacy">
+        <div class="card-head">
+          <h2>7. Privacy Policy</h2>
+          <span class="chip">Privacy</span>
+        </div>
+        <div class="card-body">
+          <p>
+            We respect your privacy. We do not sell, rent, or trade personal data.
+          </p>
+
+          <p><strong>What we may collect</strong></p>
+          <ul>
+            <li>Limited technical information needed to run the App (e.g., device identifiers for analytics/ads where applicable).</li>
+            <li>Anonymous usage analytics to improve performance and reliability.</li>
+            <li>Purchase/subscription status via third-party billing services (e.g., RevenueCat).</li>
+          </ul>
+
+          <p><strong>Third-party services</strong></p>
+          <p>
+            The App may use third-party providers (such as Firebase, AdMob, and RevenueCat). These services may collect
+            limited information under their own privacy policies.
+          </p>
+
+          <p><strong>How we use data</strong></p>
+          <ul>
+            <li>To provide core features and maintain service stability.</li>
+            <li>To improve the App (performance, usability, reliability).</li>
+            <li>To manage subscriptions and purchases.</li>
+            <li>To display ads (if enabled in your version/region).</li>
+          </ul>
+
+          <p class="fineprint">
+            If you want, I can add a short “Data Retention” paragraph (e.g., “we keep analytics for up to X months”) —
+            it can help with professional completeness.
+          </p>
+        </div>
+      </section>
+
+      <!-- LIABILITY -->
+      <section class="card anchor" id="liability">
+        <div class="card-head">
+          <h2>8. Limitation of Liability</h2>
+          <span class="chip">Legal</span>
+        </div>
+        <div class="card-body">
+          <p>
+            Sports outcomes are unpredictable. To the maximum extent permitted by law, the developer will not be liable for:
+          </p>
+          <ul>
+            <li>Any financial loss or damages of any kind.</li>
+            <li>Decisions made based on App content, including AI outputs.</li>
+            <li>Indirect, incidental, or consequential damages.</li>
+          </ul>
+          <p>
+            You use the App at your own risk.
+          </p>
+        </div>
+      </section>
+
+      <!-- AGE -->
+      <section class="card anchor" id="age">
+        <div class="card-head">
+          <h2>9. Age Requirement</h2>
+          <span class="chip">Eligibility</span>
+        </div>
+        <div class="card-body">
+          <p>
+            The App is intended for users aged <strong>13+</strong>. Users under 18 should use the App with parental guidance.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHANGES -->
+      <section class="card anchor" id="changes">
+        <div class="card-head">
+          <h2>10. Changes to These Terms</h2>
+          <span class="chip">Updates</span>
+        </div>
+        <div class="card-body">
+          <p>
+            We may update these Terms from time to time. Continued use of the App after updates are posted constitutes acceptance
+            of the revised Terms.
+          </p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card anchor" id="contact">
+        <div class="card-head">
+          <h2>11. Contact</h2>
+          <span class="chip">Support</span>
+        </div>
+        <div class="card-body">
+          <p>
+            For questions about these Terms or the Privacy Policy, contact us:
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:aifootballpredictor@gmail.com">aifootballpredictor@gmail.com</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> 1X2-AI – Football & Fun. All rights reserved.</div>
+        <a class="backtop" href="#top" aria-label="Back to top">↑ Back to top</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Keep footer year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
